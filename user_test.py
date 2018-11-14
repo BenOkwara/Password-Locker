@@ -47,15 +47,15 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
 
-    def test_display_all_contacts(self):
+    def test_display_all_users(self):
         '''
         method that returns a list of all users saved
         '''
-        self.assertEqual(User.display_contacts(),User.user_list)
+        self.assertEqual(User.display_users(),User.user_list)
 
     def test_copy_email(self):
         '''
-        Test to confirm that we can copy an email address from a found test_display_all_contacts
+        Test to confirm that we can copy an email address from a found test_display_all_users
         '''
         self.new_user.save_user()
         User.copy_email("bensonwaweru47@gmail.com")
