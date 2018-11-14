@@ -20,6 +20,12 @@ def find_user(email):
     '''
     return User.find_by_email(email)
 
+def check_existing_users(first_name):
+    '''
+    Function that checks if a user exists with the name and returns a Boolean
+    '''
+    return User.user_exists(first_name)
+
 def display_users():
     '''
     Function that returns all the saved users
