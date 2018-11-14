@@ -47,20 +47,46 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
 
-    def test_display_all_users(self):
+    def test_find_user_by_email(self):
         '''
-        method that returns a list of all users saved
+        Test to check if we can find a user by email and display information
         '''
-        self.assertEqual(User.display_users(),User.user_list)
 
-    def test_copy_email(self):
-        '''
-        Test to confirm that we can copy an email address from a found test_display_all_users
-        '''
         self.new_user.save_user()
-        User.copy_email("bensonwaweru47@gmail.com")
+        test_user = User("Test","user","bensonwaweru47@gmail.com") # new user
+        test_user.save_user()
 
-        self.assertEqual(self.new_user.email,pyperclip.paste())
+        found_user = User.find_by_email("bensonwaweru47@gmail.com")
+
+        self.assertEqual(found_user.email,test_user.email)
+
+    def test_user_exists(self):
+        '''
+        Test to check if we can return a Boolean  if we cannot find the user.
+        '''
+
+        self.new_user.save_user()
+        test_user = User("Test","user","test@user.com") # new user
+        test_user.save_user()
+
+        user_exists = User.user_exists("Jimmy")
+
+        self.assertTrue(user_exists)
+
+    # def test_display_all_users(self):
+    #     '''
+    #     method that returns a list of all users saved
+    #     '''
+    #     self.assertEqual(User.display_users(),User.user_list)
+    #
+    # def test_copy_email(self):
+    #     '''
+    #     Test to confirm that we can copy an email address from a found test_display_all_users
+    #     '''
+    #     self.new_user.save_user()
+    #     User.copy_email("bensonwaweru47@gmail.com")
+    #
+    #     self.assertEqual(self.new_user.email,pyperclip.paste())
 
     # def test_user_exists(self):
     #     '''
