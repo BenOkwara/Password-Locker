@@ -13,6 +13,13 @@ def save_users(user):
     Function to save user
     '''
     user.save_users()
+
+def find_user(email):
+    '''
+    Function that finds a user by email and returns the user
+    '''
+    return User.find_by_email(email)
+
 def display_users():
     '''
     Function that returns all the saved users

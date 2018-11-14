@@ -4,6 +4,22 @@ class User:
     Class that generates new instances of users
     '''
 
+    def __init__(self,first_name,last_name,email):
+
+        '''
+        __init__ method that defines the properties for my user's object
+
+        Args:
+        first_name: New user for first name.
+        last_name: New user for last name.
+        email: New user for email address.
+        '''
+
+        self.first_name = first_name
+        self.last_name = last_name
+        self.email = email
+
+
     user_list = [] # Empty user list
     # Init method up here
     def save_user(self):
@@ -12,18 +28,6 @@ class User:
         '''
         User.user_list.append(self)
 
-
-    # @classmethod
-    # def display_users(cls):
-    #     '''
-    #     method that returns the user list
-    #     '''
-    #     return cls.user_list
-    #
-    # @classmethod
-    # def copy_email(cls,number):
-    #     user_found = User.find_by_number(number)
-    #     pyperclip.copy(user_found.number)
 
     @classmethod
     def find_by_email(cls,email):
@@ -62,18 +66,3 @@ class User:
         This method returns the user list
         '''
         return cls.user_list
-
-    def __init__(self,first_name,last_name,email):
-
-        '''
-        __init__ method that defines the properties for my user's object
-
-        Args:
-        first_name: New user for first name.
-        last_name: New user for last name.
-        email: New user for email address.
-        '''
-
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
