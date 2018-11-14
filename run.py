@@ -33,75 +33,84 @@ def display_users():
     return User.display_users()
 
 '''
-<!---------------------------------------------- MAIN FUNCTION ------------------------------------------------------------>
+<!--------------------------------------------------------- MAIN FUNCTION ---------------------------------------------------------------------->
 '''
 def main():
-    print("Hi there, So much Welcomed to your One-and-Only Pompy-Site. Type Your Full Names:")
+    
+    print("Hi, Wanna see some Magic? Type your First Name")
+    user_name = input()
+    print(f"Hello {user_name}. Glad to Visit Password Locker")
+    print('\n')
 
-            user_name = input()
-            print(f"Hello {user_name}. Glad to join my first Password Locker!!")
-            print('\n')
+    while True:
+            print("Use these short codes: create - create a new user, display -display users, find - find a user, ex -exit the user list ")
 
-            while True:
-                    print("Use these short codes: cc - create a new user, dc -display users, fc - find a user, ex -exit the user list ")
+            short_code = input().lower()
 
-                    short_code = input().lower()
+            if short_code == 'create':
+                    print("-"*15)
+                    print("Welcome")
+                    print("-"*15)
+                    print("New User")
+                    print("-"*15)
 
-                    if short_code == 'cc':
-                            print("New User")
-                            print("-"*10)
+                    print ("First name ....")
+                    firstname = input()
 
-                            print ("First name ....")
-                            firstname = input()
+                    print ("Last name .....")
+                    lastname = input()
 
-                            print ("Last name ....")
-                            lastname = input()
+                    print ("Email adress ....")
+                    email = input()
 
-                            print ("Email address ...")
-                            email = input()
+                    '''
+                    Creating and save new users
+                    '''
+                    save_users(create_user(firstname,lastname,email))
+                    print ('\n')
 
-                            '''
-                            Create and save new users
-                            '''
-                            save_users(create_user(firstname,lastname,email))
-                            print ('\n')
+                    print(f"New User {firstname} {lastname} created")
+                    print ('\n')
+                    print("-"*15)
 
-                            print(f"New User {firstname} {lastname}")
-                            print ('\n')
+            elif short_code == 'display':
 
-                    elif short_code == 'dc':
+                    if display_users():
+                            print ("Confirm your credentials")
+                            print('\n')
 
-                            if display_users():
-                                    print ("Confirm your credentials")
-                                    print('\n')
+                            for user in display_users():
+                                print(f"{user.first_name} {user.last_name} & {user.email}")
 
-                                    for contact in display_users():
-                                        print(f"{user.first_name} {user.last_name} .....{user.email}")
+                            print('\n')
 
-                                    print('\n')
-
-                            else:
-                                    print('\n')
-                                    print("Opps! seems You.ve Input your credentials wrongly!!")
-                                    print('\n')
-
-                    elif short_code == 'fc':
-
-                            print("Enter the detail you want to search for ...")
-                            search_enter = input()
-                            if check_existing_users(search_enter)
-                                    search_user = find_user(search_enter)
-                                    print(f"{search_user.first_name} {search_user.last_name}")
-                                    print('-' * 20)
-
-                                    print (f"Last name ......{search_user.last_name}")
-                                    print (f"Your Email ......{search_user.email}")
-
-                            elif:
-                                    print("Those credentials don't Exist")
-
-                    elif short_code == "ex":
-                            print("Try Later ......")
-                            break
                     else:
-                            print("I really did't get your credentials well. Kindly be Keen wile trying again")
+                            print('\n')
+                            print(f"Opps! seems You've Input your credentials wrongly!!")
+                            print('\n')
+
+            elif short_code == 'find':
+
+                    print("Enter the detail you want to search for ...")
+                    search_detail = input()
+                    if check_existing_users(search_detail):
+                            search_user = find_user(search_detail)
+                            print(f"{search_user.first_name} {search_user.last_name}")
+                            print('-' * 15)
+
+                            print (f"Last name ......{search_user.first_name}")
+                            print (f"Your Email ......{search_user.email}")
+
+                    else:
+                            print("Those credentials don't Exist")
+
+            elif short_code == "ex":
+                    print("Try Later ......")
+                    break
+            else:
+                    print("I Didn't Get Your Credentials Well, My Bad!!")
+
+
+if __name__ == '__main__':
+
+    main()

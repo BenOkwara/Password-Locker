@@ -22,7 +22,7 @@ class User:
 
     user_list = [] # Empty user list
     # Init method up here
-    def save_user(self):
+    def save_users(self):
         '''
         save_user method saves user objects into user_list
         '''

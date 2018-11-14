@@ -79,45 +79,5 @@ class TestUser(unittest.TestCase):
         '''
         self.assertEqual(User.display_users(),User.user_list)
 
-    # def test_copy_email(self):
-    #     '''
-    #     Test to confirm that we can copy an email address from a found test_display_all_users
-    #     '''
-    #     self.new_user.save_user()
-    #     User.copy_email("bensonwaweru47@gmail.com")
-    #
-    #     self.assertEqual(self.new_user.email,pyperclip.paste())
-
-    # def test_user_exists(self):
-    #     '''
-    #     test to check if i can return a boolean if the we don't find any existing users
-    #     '''
-    #     self.new_user.save_user()
-    #     test_user = User("Test","user","test@user.com") # new
-    #     test_user.save_user()
-    #
-    #     user_exists = User.user_exists("Benson")
-    #
-    #     self.assertEqual(user_exists)
-    #
-    # @classmethod
-    # def user_exists(cls,last_number):
-    #
-    #     '''
-    #     This is a method that checks whether user exist at the user_list
-    #     Args:
-    #         Last name to check if the user really exist.
-    #     Boolean: Trie or false depending if the user exist
-    #     '''
-    #
-    #     for user in cls.user_list:
-    #         if user.last_name == last_name:
-    #                 return True
-    #
-    #     return False
-
-
-
-
 if __name__ =='__main__':
     unittest.main()
