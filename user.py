@@ -56,6 +56,13 @@ class User:
 
         return False
 
+    @classmethod
+    def display_users(cls):
+        '''
+        This method returns the user list
+        '''
+        return cls.user_list
+
     def __init__(self,first_name,last_name,email):
 
         '''

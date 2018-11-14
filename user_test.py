@@ -73,12 +73,12 @@ class TestUser(unittest.TestCase):
 
         self.assertTrue(user_exists)
 
-    # def test_display_all_users(self):
-    #     '''
-    #     method that returns a list of all users saved
-    #     '''
-    #     self.assertEqual(User.display_users(),User.user_list)
-    #
+    def test_display_all_users(self):
+        '''
+        method that returns a list of all users saved
+        '''
+        self.assertEqual(User.display_users(),User.user_list)
+
     # def test_copy_email(self):
     #     '''
     #     Test to confirm that we can copy an email address from a found test_display_all_users
