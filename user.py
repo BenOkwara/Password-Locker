@@ -4,6 +4,7 @@ class User:
     Class that generates new instances of users
     '''
 
+    # Init method up here
     def __init__(self,first_name,last_name,email):
 
         '''
@@ -21,7 +22,7 @@ class User:
 
 
     user_list = [] # Empty user list
-    # Init method up here
+
     def save_users(self):
         '''
         save_user method saves user objects into user_list
