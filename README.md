@@ -5,7 +5,7 @@
 This is an application where users can generate a password. Users can store their passwords for various accounts.
 
 #### Link to deployed site
-http://mtr1bune.herokuapp.com/
+https://github.com/BenOkwara/Password-Locker
 
 ## Table of content
 1. [Description](#description)
@@ -41,7 +41,7 @@ python3.6 credential_test.py
 ```bash
 ./run.py
 ```
-Open [localhost:8000](http://127.0.0.1:8000/)
+Open [Password Locker](https://github.com/BenOkwara/Password-Locker)
 
 ## Bugs
 no bugs.
