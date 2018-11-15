@@ -30,6 +30,22 @@ def test_save_credential(self):
     self.new_credential.save_credential() # saving the new user
     self.assertEqual(len(Credential.credential_list),1)
 
+def tearDown(self):
+    '''
+    tearDown method it cleans up after each test case has run.
+    '''
+    Credential.credential_list = []
+
+def test_save_multiple_credential(self):
+    '''
+    test_save_multiple_credential to check if the credential can be able to save multiple user objects to our credential_list
+    '''
+    self.new_credential.save_credential()
+    test_credential = Credential("Test","credential","test@credential.com") # new users
+    test_credential.save_credential()
+    self.assertEqual(len(Credential.credential_list),2)
+
+
 
 if __name__ =='__main__':
     unittest.main()
