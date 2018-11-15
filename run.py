@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 from user import User
+from credential import Credential
 
 def create_user(firstname,lastname,email):
     '''
@@ -8,6 +9,13 @@ def create_user(firstname,lastname,email):
     new_user = User(firstname,lastname,email)
     return new_user
 
+def create_credential(Email,password):
+    '''
+    Function to create a new credential
+    '''
+    new_credential = Credential(Email,password)
+    return new_credential
+    
 def save_users(user):
     '''
     Function to save user
@@ -36,7 +44,7 @@ def display_users():
 <!--------------------------------------------------------- MAIN FUNCTION ---------------------------------------------------------------------->
 '''
 def main():
-    
+
     print("Hi, Wanna see some Magic? Type your First Name")
     user_name = input()
     print(f"Hello {user_name}. Glad to Visit Password Locker")

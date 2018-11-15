@@ -4,7 +4,7 @@ import pyperclip
 
 class TestUser(unittest.TestCase):
     '''
-    Test class that defines the test cases for the user class behavioursself.
+    Test class that defines the test cases for the user class behaviours.
 
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
